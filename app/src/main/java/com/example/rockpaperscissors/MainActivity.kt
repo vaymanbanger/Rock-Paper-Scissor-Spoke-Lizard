@@ -7,7 +7,7 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import com.example.rockpaperscissors.databinding.ActivityMainBinding
 
-class ЧЁMainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     val game : Game = Game()
     var userChoice : GameItems = GameItems.NONE
     private lateinit var binding: ActivityMainBinding
