@@ -30,12 +30,12 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="172dp"
-        android:layout_height="105dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="206dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="4dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/lightblueimage" />
@@ -44,10 +44,10 @@
         android:id="@+id/rockButton"
         android:layout_width="106dp"
         android:layout_height="48dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="316dp"
-        android:text="Камень"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="324dp"
         android:onClick="setUserChoice"
+        android:text="Камень"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,10 +55,10 @@
         android:id="@+id/paperButton"
         android:layout_width="103dp"
         android:layout_height="48dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="376dp"
-        android:text="Бумага"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="276dp"
         android:onClick="setUserChoice"
+        android:text="Бумага"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,10 +66,10 @@
         android:id="@+id/scissorsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="315dp"
-        android:layout_marginEnd="16dp"
-        android:text="Ножницы"
+        android:layout_marginTop="324dp"
+        android:layout_marginEnd="24dp"
         android:onClick="setUserChoice"
+        android:text="Ножницы"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -77,21 +77,22 @@
         android:id="@+id/lizardButton"
         android:layout_width="116dp"
         android:layout_height="48dp"
-        android:layout_marginTop="374dp"
-        android:layout_marginEnd="16dp"
-        android:text="Ящерица"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="68dp"
         android:onClick="setUserChoice"
+        android:text="Ящерица"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/spockButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="454dp"
-        android:text="Спок"
+        android:layout_width="122dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="400dp"
         android:onClick="setUserChoice"
+        android:text="Спок"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.159"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -133,9 +134,9 @@
 
     <TextView
         android:id="@+id/tv_bot_choice"
-        android:layout_width="170dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="26dp"
+        android:layout_width="174dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="16dp"
         android:layout_marginBottom="52dp"
         android:text=""
         android:textAlignment="center"

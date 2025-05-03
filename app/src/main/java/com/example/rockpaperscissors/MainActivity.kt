@@ -1,6 +1,6 @@
 package com.example.rockpaperscissors
 
-import GameItems
+import BattleOptions
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -8,8 +8,8 @@ import androidx.core.content.ContextCompat
 import com.example.rockpaperscissors.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    val game : Game = Game()
-    var userChoice : GameItems = GameItems.NONE
+    val battleLogic : BattleLogic = BattleLogic()
+    var userChoice : BattleOptions = BattleOptions.NONE
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,26 +23,26 @@ class MainActivity : AppCompatActivity() {
 
     public fun setUserChoice(control : View){
         userChoice = when(control.id){
-            binding.lizardButton.id -> GameItems.LIZARD
-            binding.rockButton.id -> GameItems.ROCK
-            binding.paperButton.id -> GameItems.PAPER
-            binding.spockButton.id -> GameItems.SPOCK
-            binding.scissorsButton.id -> GameItems.SCISSORS
-            else -> GameItems.NONE
+            binding.lizardButton.id -> BattleOptions.LIZARD
+            binding.rockButton.id -> BattleOptions.ROCK
+            binding.paperButton.id -> BattleOptions.PAPER
+            binding.spockButton.id -> BattleOptions.SPOCK
+            binding.scissorsButton.id -> BattleOptions.SCISSORS
+            else -> BattleOptions.NONE
         }
     }
 
     public fun startGame(control : View){
-        if (userChoice == GameItems.NONE){
+        if (userChoice == BattleOptions.NONE){
             binding.tvGameResult.text = "Сделайте свой выбор"
             return
         }
-        val botChoice = game.getItemForBot()
-        val result = game.determineTheWinner(userChoice, botChoice)
+        val botChoice = battleLogic.generateAiSelection()
+        val result = battleLogic.determineTheWinner(userChoice, botChoice)
         binding.tvPayerChoice.text = "Вы выбрали $userChoice"
         binding.tvBotChoice.text = "$botChoice выбрал противник"
         binding.tvGameResult.text = when(result){
-            1 -> "Вы выйграли"
+            1 -> "Вы выиграли"
             0 -> "Ничья"
             -1 -> "Вы проиграли"
             else -> "Программная ошибка"
