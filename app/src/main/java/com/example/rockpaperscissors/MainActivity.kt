@@ -58,5 +58,19 @@ class MainActivity : AppCompatActivity() {
             -1 -> "Вы проиграли"
             else -> "Программная ошибка"
         }
+
+        binding.ivPlayerChoice.setImageResource(getDrawableResId(userChoice))
+        binding.ivBotChoice.setImageResource(getDrawableResId(botChoice))
+    }
+
+    private fun getDrawableResId(choice: BattleOptions): Int {
+        return when(choice) {
+            BattleOptions.ROCK -> R.drawable.rock
+            BattleOptions.PAPER -> R.drawable.paper
+            BattleOptions.SCISSORS -> R.drawable.scissors
+            BattleOptions.LIZARD -> R.drawable.lizard
+            BattleOptions.SPOCK -> R.drawable.spock
+            else -> R.drawable.ic_launcher_background
+        }
     }
 }
