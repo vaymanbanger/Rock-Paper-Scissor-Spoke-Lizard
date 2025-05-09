@@ -1,7 +1,5 @@
 package com.example.rockpaperscissors
 
-import BattleOptions
-import compareChoices
 import kotlin.random.Random
 
 public class BattleLogic {

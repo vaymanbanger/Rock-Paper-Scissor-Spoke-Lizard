@@ -1,4 +1,6 @@
-public enum class BattleOptions {
+package com.example.rockpaperscissors
+
+enum class BattleOptions {
     ROCK {
         override val winsAgainst: List<BattleOptions>
             get() = listOf(SCISSORS, LIZARD)
@@ -28,7 +30,7 @@ public enum class BattleOptions {
     abstract val winsAgainst: List<BattleOptions>
 }
 
-public fun compareChoices(userChoice: BattleOptions, botChoice: BattleOptions): Int {
+fun compareChoices(userChoice: BattleOptions, botChoice: BattleOptions): Int {
     return when {
         userChoice == botChoice -> 0
         botChoice in userChoice.winsAgainst -> 1

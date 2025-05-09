@@ -1,6 +1,5 @@
 package com.example.rockpaperscissors
 
-import BattleOptions
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -39,8 +38,20 @@ class MainActivity : AppCompatActivity() {
         }
         val botChoice = battleLogic.generateAiSelection()
         val result = battleLogic.determineTheWinner(userChoice, botChoice)
-        binding.tvPayerChoice.text = "Вы выбрали $userChoice"
-        binding.tvBotChoice.text = "$botChoice выбрал противник"
+
+        fun getRussianName(choice: BattleOptions): String {
+            return when(choice) {
+                BattleOptions.ROCK -> "Камень"
+                BattleOptions.PAPER -> "Бумага"
+                BattleOptions.SCISSORS -> "Ножницы"
+                BattleOptions.LIZARD -> "Ящерица"
+                BattleOptions.SPOCK -> "Спок"
+                else -> "Неизвестно"
+            }
+        }
+
+        binding.tvPayerChoice.text = "Вы выбрали ${getRussianName(userChoice)}"
+        binding.tvBotChoice.text = "Он выбрал ${getRussianName(botChoice)}"
         binding.tvGameResult.text = when(result){
             1 -> "Вы выиграли"
             0 -> "Ничья"
